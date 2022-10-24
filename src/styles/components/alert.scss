@@ -1,0 +1,19 @@
+.alert {
+    padding: 10px 17px;
+    font-size: 20px;
+    border: 1px solid $dark-color;
+    margin: 1rem 0;
+
+    &-warning {
+        background: $alert-warning;
+        border: $alert-warning-border;
+    }
+    &-danger {
+        background: $alert-danger;
+        border: $alert-danger-border;
+    }
+    &-info {
+        background: $alert-info;
+        border: $alert-info-border;
+    }
+}

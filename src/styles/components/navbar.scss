@@ -1,0 +1,40 @@
+.navbar {
+    padding: 1rem;
+    background-color: $dark-color;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.nav__brand a {
+    font-size: 1.4rem;
+    color: $light-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.nav__links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.links__link a {
+    display: block;
+    padding: 1rem;
+    color: $light-color;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    border: 1px solid $dark-color;
+    font-size: 20px;
+
+    &:hover {
+        border-bottom: 1px solid $secondary-color;
+        color: $secondary-color;
+    }
+}
