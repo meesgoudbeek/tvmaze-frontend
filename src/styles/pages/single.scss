@@ -1,0 +1,21 @@
+.singleshow {
+    display: flex;
+    margin: 2rem 0;
+
+    &__info p {
+        margin: 1rem 0;
+    }
+
+    &__genre {
+        display: inline-block;
+        border-radius: 15px;
+        margin: 0.5rem 1rem 0.5rem 0;
+        padding: 10px 17px;
+        background: $secondary-color;
+        color: $light-color;
+    }
+}
+
+.singleshow > img {
+    margin-right: 2rem;
+}

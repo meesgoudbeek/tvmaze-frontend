@@ -37,12 +37,18 @@ const Single = () => {
                     />
                     <div className="singleshow__info">
                         <h1>{singleShow.name}</h1>
-                        {singleShow.genres &&
-                            singleShow.genres.map((genre) => (
-                                <span key={genre} className="singleshow__genre">
-                                    {genre}
-                                </span>
-                            ))}
+                        <p>
+                            <strong>Genres: </strong>
+                            {singleShow.genres &&
+                                singleShow.genres.map((genre) => (
+                                    <span
+                                        key={genre}
+                                        className="singleshow__genre"
+                                    >
+                                        {`${genre}`}
+                                    </span>
+                                ))}
+                        </p>
                         <p>
                             <strong>Status:</strong>{' '}
                             {singleShow.status && singleShow.status}
@@ -68,6 +74,7 @@ const Single = () => {
                             )}
                         </p>
                         <p>
+                            <strong>Summary:</strong>
                             {singleShow.summary &&
                                 removeTags(singleShow.summary)}
                         </p>
