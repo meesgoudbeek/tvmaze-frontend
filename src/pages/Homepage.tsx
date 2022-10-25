@@ -13,11 +13,11 @@ const Home = () => {
             <Searchbar />
             {loading ? (
                 <Loader />
-            ) : (
+            ) : shows.length !== 0 ? (
                 <div className="homepage__list">
-                    {shows.map((item) => (
+                    {shows.map((item, index) => (
                         <ListItem
-                            key={item.show.id}
+                            key={index}
                             id={item.show.id}
                             image={
                                 item.show.image
@@ -32,6 +32,10 @@ const Home = () => {
                             }
                         />
                     ))}
+                </div>
+            ) : (
+                <div>
+                    <h1>No tv show found with this input</h1>
                 </div>
             )}
         </div>

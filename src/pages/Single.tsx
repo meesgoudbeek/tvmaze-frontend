@@ -9,7 +9,6 @@ const Single = () => {
 
     useEffect(() => {
         getSingleShow(id)
-
         // eslint-disable-next-line
     }, [])
 

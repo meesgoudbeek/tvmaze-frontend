@@ -1,15 +1,22 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import ShowsContext from '../context/shows/showsContext'
 import AlertsContext from '../context/alerts/alertsContext'
 import Alert from './Alert'
 
 const Searchbar = () => {
     const [searchTerm, setSearchTerm] = useState('')
-
     const showsContext = useContext(ShowsContext)
     const { searchShows } = showsContext
 
     const { alert, setAlert } = useContext(AlertsContext)
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value)
+    }
+
+    useEffect(() => {
+        searchShows(searchTerm)
+    }, [searchTerm])
 
     const onSearchHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
@@ -29,7 +36,7 @@ const Searchbar = () => {
                     type="text"
                     placeholder="Search For Tv Show"
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={handleSearchChange}
                 />
                 <button className="btn btn-block" onClick={onSearchHandler}>
                     SEARCH
